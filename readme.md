@@ -34,7 +34,42 @@ Below is the embedding of an external SVG using the `<object>` tag:
 
 Replace "capfire-svg-animate.svg" with the correct path to your external SVG file
 
-## Animated SVG Code
+There are other ways to insert an external SVG, with the img or iframe tag of HTML or through JavaScript codes like these:
+
+1. Fetch and HTML Insertion:
+```javascript
+fetch('path/to/your/file.svg')
+    .then(response => response.text())
+    .then(svg => {
+        document.getElementById('yourElement').innerHTML = svg;
+    });
+```
+
+2. Insertion with AJAX:
+```javascript
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'path/to/your/file.svg', true);
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        document.getElementById('yourElement').innerHTML = xhr.responseText;
+    }
+};
+xhr.send();
+```
+
+3. Insertion with jQuery:
+```javascript
+$.get('path/to/your/file.svg', function (data) {
+    $('#yourElement').html(data);
+});
+```
+
+The object tag does not work in Markdown. To insert the animated campfire in this document, I had to use the img tag like this:
+```html
+<img src="./svg/campfire-animate/campfire-svg-tag-animate-plano.svg" type="image/svg+xml" width="200" height="300" />
+```
+
+### Campfire Animated SVG Code
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
