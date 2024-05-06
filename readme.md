@@ -23,11 +23,14 @@ The `<animate>` tag allows specifying initial and final values of an attribute o
 
 ## Embedding External SVG
 
-Below is the embedding of an external SVG using the `<object>` tag:
+<img src="./svg/campfire-animate/campfire-svg-tag-animate-plano.svg" type="image/svg+xml" width="200" height="300" />
 
-<object data="./svg/campfire-animate/campfire-svg-animate.svg" type="image/svg+xml">
+Below is the embedding of an external SVG using the `<object>` tag:
+```html
+<object data="./svg/campfire-animate/campfire-svg-tag-animate-plano.svg" type="image/svg+xml">
   Your browser does not support SVG
 </object>
+```
 
 Replace "capfire-svg-animate.svg" with the correct path to your external SVG file
 
